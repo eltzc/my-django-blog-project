@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+    <h2>Последние статьи</h2>
+    {% for post in posts %}
+        <article class="blog-post">
+            <h3><a href="{% url 'blog_detail' post.slug %}">{{ post.title }}</a></h3>
+            <p class="post-meta">Автор: {{ post.author }} | Дата: {{ post.created_at }}</p>
+            <p>{{ post.content|slice:":100" }}...</p> {# Обрезаем контент для превью #}
+        </article>
+    {% empty %}
+        <p>Пока нет опубликованных статей.</p>
+    {% endfor %}
+{% endblock %}

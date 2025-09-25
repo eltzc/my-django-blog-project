@@ -1,0 +1,69 @@
+/* blog/static/blog/css/dark.css */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #222; /* Темный фон */
+    color: #eee; /* Светлый текст */
+}
+.container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #333; /* Темнее фон контента */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+header {
+    background-color: #444; /* Темный заголовок */
+    padding: 10px 0;
+    text-align: center;
+    border-bottom: 1px solid #555;
+}
+header h1 a {
+    color: #eee;
+    text-decoration: none;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+nav a {
+    color: #bbb;
+    text-decoration: none;
+}
+main {
+    padding: 20px;
+}
+.blog-post, .blog-post-detail {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #555; /* Темная рамка */
+    background-color: #333; /* Темный фон карточки */
+}
+.blog-post h3 a {
+    color: #00aaff; /* Более яркая ссылка в темной теме */
+    text-decoration: none;
+}
+.post-meta {
+    font-size: 0.9em;
+    color: #999;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #444; /* Темный футер */
+    border-top: 1px solid #555;
+    margin-top: 20px;
+}
+select {
+    padding: 5px;
+    margin-left: 5px;
+    border: 1px solid #555;
+    border-radius: 3px;
+    background-color: #444;
+    color: #eee;
+}

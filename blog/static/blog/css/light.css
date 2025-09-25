@@ -1,0 +1,67 @@
+/* blog/static/blog/css/light.css */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+.container { /* Добавьте контейнер в шаблоны, если хотите центрировать контент */
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+header {
+    background-color: #eee;
+    padding: 10px 0;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+header h1 a {
+    color: #333;
+    text-decoration: none;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+nav a {
+    color: #555;
+    text-decoration: none;
+}
+main {
+    padding: 20px;
+}
+.blog-post, .blog-post-detail {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+.blog-post h3 a {
+    color: #007bff;
+    text-decoration: none;
+}
+.post-meta {
+    font-size: 0.9em;
+    color: #777;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #eee;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+}
+select {
+    padding: 5px;
+    margin-left: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}

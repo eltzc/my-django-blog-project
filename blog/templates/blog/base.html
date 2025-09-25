@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="{{ current_language }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Мой Блог{% endblock %}</title>
+    {# Подключаем стиль в зависимости от темы #}
+    <link rel="stylesheet" href="{% static 'blog/css/' %}{{ current_theme }}.css">
+    {% block extra_css %}{% endblock %}
+</head>
+<body class="{{ current_theme }}">
+    <header>
+        <h1><a href="{% url 'blog_index' %}">Мой Блог</a></h1>
+        <nav>
+            <ul>
+                {# Форма для выбора настроек #}
+                <form action="{% url 'set_preference' %}" method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <label for="theme">Тема:</label>
+                    <select name="theme" id="theme" onchange="this.form.submit()">
+                        {% for key, value in available_themes.items %}
+                            <option value="{{ key }}" {% if key == current_theme %}selected{% endif %}>{{ value }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <label for="language">Язык:</label>
+                    <select name="language" id="language" onchange="this.form.submit()">
+                        {% for key, value in available_languages.items %}
+                            <option value="{{ key }}" {% if key == current_language %}selected{% endif %}>{{ value }}</option>
+                        {% endfor %}
+                    </select>
+                </form>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Мой Блог. Все права защищены.</p>
+    </footer>
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
