@@ -20,3 +20,11 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
+
+from django.contrib import admin
+from django.urls import path, include # Импортируем include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('blog.urls')), # Включаем URL-ы из приложения blog
+]
